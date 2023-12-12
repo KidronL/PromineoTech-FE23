@@ -62,7 +62,7 @@ class Deck {
     getCardName(x, y) {
         const faceCards = ["Jack", "Queen", "King", "Ace"];
         if (x >= 11 && x <= 14) {
-            return `${facecards[x - 11]} of ${y}`;
+            return `${faceCards[x - 11]} of ${y}`;
         } else return `${x} of ${y}`;
     }
 }
@@ -84,7 +84,7 @@ class Player {
     }
 
     flip() {
-        if (this,hand.length > 0) {
+        if (this.hand.length > 0) {
             return this.hand.shift();
         } else return null;
     }
@@ -126,7 +126,6 @@ class App {
         for (let i = 0; i < 26; i++) {
             const card1 = p1.flip();
             const card2 = p2.flip();
-        }
 
         console.log(`\n${p1.getName()} flipped ${card1.getName()}`);
         console.log(`${p2.getName()} flipped ${card2.getName()}`);
@@ -139,6 +138,8 @@ class App {
             console.log(`\nPoint goes to ${p2.getName()}!`)
         } else {
             console.log("\nDraw! No Point!");
+        }
+
         }
 
         console.log("\nScores");
