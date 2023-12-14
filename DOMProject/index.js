@@ -1,18 +1,17 @@
 //Creating player class to pass in the values from user input
- class Player{
-        constructor (name,team,pos,playerNum) {
+ function Player(name,team,pos,playerNum){
         this.name = name;
         this.team = team;
         this.pos = pos;
         this.playerNum = playerNum;
-        }
+        
  }
  
  const submit = document.getElementById('submit');
 
- submit.addEventListener('click', (event) => {
-   event.preventDefault();
-   createPlayer();
+submit.addEventListener('click', (event) => {
+    event.preventDefault();
+    createPlayer();
 })
 
 
@@ -20,26 +19,25 @@
 function createPlayer() {
 
     const name = document.getElementById('playerInput').value;
-    const team = document.getElementById('teamInput').value;
-    const pos = document.querySelector(`input[name="position"]:checked`);
-    const playerNum = document.getElementById('num')
+    const team = document.getElementById('teamSelect').value;
+    const pos = document.querySelector('input[name="position"]:checked').value;
+    const playerNum = document.getElementById('playNum').value
     
     if (!name || !team || !pos || !playerNum) {
         alert("Please fill in all fields.");
         return;
     }
 
-
     const player = new Player (name,team,pos,playerNum)
 
     if(player.team === 'redTeam') {
         addRed(player);
-    } else (player);
+    } else addBlue(player);
 
     document.getElementById('playerInput').value = '';
-    document.getElementById('teamInput').value = '';
-    pos.checked = false;
-    document.getElementById('num').value = '';
+    document.getElementById('teamSelect').value = '';
+    document.querySelector('input[name="position"]:checked').checked = false;
+    document.getElementById('playNum').value ='';
 }
 
 //Functions to add the player to the proper teams
