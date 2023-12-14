@@ -1,4 +1,4 @@
-//Creating player class to pass in the values from user input
+//Creating function to pass in the values from user input
  function Player(name,team,pos,playerNum){
         this.name = name;
         this.team = team;
@@ -7,6 +7,7 @@
         
  }
  
+ //Declaring an event listener to listen for a mouse click
  const submit = document.getElementById('submit');
 
 submit.addEventListener('click', (event) => {
@@ -61,6 +62,7 @@ function createPlayer() {
     actions.appendChild(deletePlayer(row));
  }
 
+ //Function to add delete button to the table
  function deletePlayer(row) {
     let btn = document.createElement('button');
     btn.className = 'btn btn-danger';
