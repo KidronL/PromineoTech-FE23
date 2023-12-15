@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body class="bg-secondary">
+
+    <!--Navbar from the home page, except contact is now active and home is linked with a hover added-->
+    <nav class="navbar mb-4 navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand fw-bold fs-3" href="index.html">KL</a>
+          <div class="collapse navbar-collapse" id="nvg">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link hover" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <br>
+
+      <!--The HTML and Bootstrap for the form. A simple contact me form.-->
+      <div class="container bg-dark mb-4 rounded">
+        <div class="mb-1">
+            <p class="fs-3 text-white fw-medium">Contact Me!</p>
+        </div>
+      <form class="row g-3">
+        <div class="col-md-6">
+          <label for="eml" class="form-label text-light">Email</label>
+          <input type="email" class="form-control" id="eml">
+        </div>
+        <div class="col-md-6">
+          <label for="phnnum" class="form-label text-white">Phone Number</label>
+          <input type="tel" class="form-control" id="phnnum" placeholder="(000)-000-0000">
+        </div>
+        <div class="col-8">
+          <label for="txtera" class="form-label text-white">Let Me Know</label>
+          <textarea type="text" class="form-control" id="txtera"></textarea>
+
+        <div class="col-12 m-3">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="upt">
+            <label class="form-check-label text-white" for="upt">
+              Can we send you updates on new articles/features?
+            </label>
+          </div>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+      <br>
+    </div>
+    
+    
+</body>
+</html>
