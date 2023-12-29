@@ -4,6 +4,8 @@
 
  const subjects = [];
  
+
+ 
  //Creating the classes for the data that will be input and stored
 
  //Class for subjects to fill the teams.
@@ -41,7 +43,7 @@
 
     async start() {
         let selection = this.showMainMenuOptions();
-        await prompt(selection);
+        prompt(selection);
         while (selection != 0) {
             switch(selection) {
                 case '1':
@@ -53,8 +55,6 @@
                 case '3':
                     this.displaySubjects();
                     break;
-                case '4':
-                    this
                 default:
                     selection = 0;
             }
@@ -69,7 +69,6 @@
         1) Add Subject
         2) Remove Subject
         3) List Subjects
-        4) Display Subject Info
         `);
     }
 
@@ -100,6 +99,6 @@
     
  }
 
- let menu = new Menu();
+ const menu = new Menu();
 
  menu.start();

@@ -1,9 +1,11 @@
-//Grabbing the elements from HTML
+//Grabbing the elements from HTML and declaring variables
 const start = $('#start');
 const reset = $('#reset');
-const cells = document.querySelector(".box");
+const cellElements = document.querySelectorAll(".box");
+const cells = Array.from(cellElements).map(element => element.id);
+console.log(cells);
 const winConditions = [
-    [cell0, 1, 2],
+    [0, 1, 2],
     [3, 4, 5],
     [6, 7, 8],
     [0, 3, 6],
@@ -18,33 +20,39 @@ let running = false;
 
 initGame();
 
+// Creating the function for the game. This starts the game and checks for clicks.
 function initGame() {
-    cells.forEach(cell => cell.addEventListener('click', cellClicked))
-    reset.addEventListener('click', restartGame);
-    start.addEventListener('click', startGame);
+    cellElements.forEach(cellElement => cellElement.addEventListener('click', () => {
+        const cellId = cellElement.id
+
+        if(options[cellId] != "" || !running){
+            return;
+        }
+    
+        updateCell(cellElement, cellId);
+        checkWinner();
+    }))
+    reset.on('click', restartGame);
+    start.on('click', startGame);
     playerTurn.textContent = `${currentPlayer}'s turn`;
     running = true;
-
 }
 
-function cellClicked(){
-    const cellId = cells.getAttribute('id');
-
-    if(options[cellId] != "" || !running){
-        return;
-    }
-
-    updateCell(this, cellId);
-    checkWinner();
-}
+//when a cell is clicked, arguments are passed into this function where it will update the cell that was clicked
 function updateCell(cell, index){
     options[index] = currentPlayer;
-    cell.textContent = currentPlayer;
+    if (currentPlayer == "X"){
+        cell.textContent = "X";
+    } else cell.textContent = "O";
+
+//Logic to change the player once a cell has been clicked   
 }
 function changePlayer(){
     currentPlayer = (currentPlayer == "X") ? "O" : "X";
     playerTurn.textContent = `${currentPlayer}'s turn`;
 }
+
+//Based on the predefined conditions, this will check for if any of them have been met
 function checkWinner(){
     let roundWon = false;
 
@@ -75,6 +83,8 @@ function checkWinner(){
         changePlayer();
     }
 }
+
+//Restarting the game
 function restartGame(){
     currentPlayer = "X";
     options = ["", "", "", "", "", "", "", "", ""];
@@ -83,6 +93,7 @@ function restartGame(){
     running = false;
 }
 
+//Starting the game
 function startGame(){
     running = true;
 }
