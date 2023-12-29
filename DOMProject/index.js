@@ -62,7 +62,7 @@ function createPlayer() {
     actions.appendChild(deletePlayer(row));
  }
 
- //Function to add delete button to the table
+ //Function to add delete button to the table 
  function deletePlayer(row) {
     let btn = document.createElement('button');
     btn.className = 'btn btn-danger';
