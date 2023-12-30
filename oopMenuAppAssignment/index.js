@@ -41,9 +41,8 @@
         this.selectedSubject = null;
     }
 
-    async start() {
+    start() {
         let selection = this.showMainMenuOptions();
-        prompt(selection);
         while (selection != 0) {
             switch(selection) {
                 case '1':
@@ -82,9 +81,7 @@
 
     deleteSubject() {
         let index = prompt('What is the index number of the subject you would like to delete: ')
-        if (index > -1 && index < this.selectedSubject.subjects.length) {
             this.subjects.splice(index,1);
-        }
     }
 
     displaySubjects() {
