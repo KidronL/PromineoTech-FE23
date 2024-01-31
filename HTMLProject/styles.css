@@ -1,0 +1,93 @@
+/*Style for the navigation*/
+.navlist {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.navlistitems {
+    float: left;
+    color:aliceblue;
+    text-align: center;
+    padding: 10px 12px;
+    text-decoration: none;
+}
+
+.navlistitems a {
+    display: block;
+    padding: 8px;
+    color:aliceblue
+}
+
+.navlistitems:hover {
+    background-color: #111;
+}
+
+/*Lists on the pages*/
+.list {
+    display:grid;
+    width: 500px;
+    height: auto;
+    list-style-type:disc;
+    background: darkgray;
+    border: black 1px solid;
+    border-radius: 10px;
+    margin: auto;
+    padding: 30px;
+}
+
+/*Page content*/
+.content {
+    display: grid;
+    width: 500px;
+    height: auto;
+    background: darkgray;
+    border: black 1px solid;
+    border-radius: 10px;
+    margin: auto;
+    padding: 30px;
+    
+}
+
+/*Style for the image*/
+.pict {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: goldenrod 3px solid;
+    width: 650px;
+    height: 350px;
+}
+
+/*Style for the headings*/
+.headings {
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+}
+
+/*Style for the to add background color*/
+.body {
+    background-color: slateblue;
+
+}
+
+/*Styleesl for the form inputs*/
+.text:focus {
+    background-color: lightblue;
+}
+
+.telephone:focus {
+    background-color: lightblue;
+}
+
+.btn:hover {
+    background-color: lightblue;
+    cursor: pointer;
+}
+
+.radio:hover {
+    cursor: pointer;
+}

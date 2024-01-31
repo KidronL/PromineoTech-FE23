@@ -6,21 +6,29 @@
     <link rel="stylesheet" href="styles.css">
     <title>Contact</title>
 </head>
-<body>
+<body class="body">
 
-    <h1>Contact</h1>
-    <div> <a href="index.html" class="href">Home</a> <a href="about.html" class="href">About</a> <a href="contact.html" class="href">Contact</a></div>
+    <div>
+        <ul class="navlist">
+            <li class="navlistitems"><a href="index.html" class="href" id="home">Home</a></li>
+            <li class="navlistitems"><a href="about.html" class="href" id="about">About</a></li>
+            <li class="navlistitems"><a href="contact.html" class="href" id="contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <h1 class="headings">Contact</h1>
+    
     <!--Contact Me Form with radio buttons and input fields-->
-    <h2>Contact Me!</h2>
+    <h2 class="headings">Contact Me!</h2>
     <br>
-    <form>
-        <input type="text" name="Name" placeholder="Name"><br>
-        <input type="tel" name="Number" placeholder="Phone Number"><br><br>
+    <form class="content">
+        <input class="text" type="text" name="Name" placeholder="Name"><br>
+        <input class="telephone" type="tel" name="Number" placeholder="Phone Number"><br><br>
         Are you interested in HTML? <br>
-        <input type="radio" name="Yes" value="Yes">Yes<br>
-        <input type="radio" name="No" value="No">No<br>
-        <input type="radio" name="Unsure" value="Unsure">Unsure<br><br>
-        <input type="submit" value="Submit">
+        <input class="radio" type="radio" name="Interest" value="Yes">Yes<br>
+        <input class="radio" type="radio" name="Interest" value="No">No<br>
+        <input class="radio" type="radio" name="Interest" value="Unsure">Unsure<br><br>
+        <input class="btn" type="submit" value="Submit">
     </form>
      
 </body>
